@@ -1,0 +1,4 @@
+github.com/kittenbark/tg v0.0.0-20250731153230-102e23dc0fab h1:AxEFkjY67jFLYjjRQ9R2ixZF9+wZXgJDJ4Oha0vVlcY=
+github.com/kittenbark/tg v0.0.0-20250731153230-102e23dc0fab/go.mod h1:n84Rl0h0IaG+pLij7L9PSwErJCbG755uoqf3pLhw4BY=
+github.com/kittenbark/tgmedia v0.0.0-20250428082105-d6a8106d56a1 h1:TaFZA03W3Ly+SchyNXgYHK6wHj09+lUwGNFJSSagvaY=
+github.com/kittenbark/tgmedia v0.0.0-20250428082105-d6a8106d56a1/go.mod h1:W+5asG2p6dHDgufMS9YwakHGSq53HaIRdbRK3qVwpVU=

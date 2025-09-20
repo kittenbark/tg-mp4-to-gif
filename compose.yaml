@@ -1,0 +1,24 @@
+services:
+  tg_mp4_to_gif:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VERSION_GOLANG: "1.24"
+        VERSION_ALPINE: "3.21"
+    environment:
+      - KITTENBARK_TG_TOKEN
+    container_name: tg_mp4_to_gif
+    env_file:
+      - .env
+    restart: on-failure
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 256M
