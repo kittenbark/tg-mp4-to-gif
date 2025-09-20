@@ -39,8 +39,9 @@ func onVideo(ctx context.Context, upd *tg.Update) error {
 	}
 	defer os.Remove(vid)
 
+	progressEditOpt := &tg.OptEditMessageText{ChatId: progress.Chat.Id, MessageId: progress.MessageId}
 	if progress != nil {
-		progress, _ = tg.EditMessageText(ctx, "Converting...")
+		progress, _ = tg.EditMessageText(ctx, "Converting...", progressEditOpt)
 	}
 	result, err := makeGif(vid)
 	if err != nil {
@@ -49,7 +50,7 @@ func onVideo(ctx context.Context, upd *tg.Update) error {
 	defer os.Remove(result)
 
 	if progress != nil {
-		progress, _ = tg.EditMessageText(ctx, "Uploading...")
+		progress, _ = tg.EditMessageText(ctx, "Uploading...", progressEditOpt)
 	}
 	_, err = tg.SendAnimation(ctx, msg.Chat.Id, tg.FromDisk(result, "@heilmeh.mp4"), &tg.OptSendAnimation{ReplyParameters: tg.AsReplyTo(msg)})
 	if err != nil {
