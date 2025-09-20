@@ -52,7 +52,7 @@ func onVideo(ctx context.Context, upd *tg.Update) error {
 	if progress != nil {
 		progress, _ = tg.EditMessageText(ctx, "Uploading...", progressEditOpt)
 	}
-	_, err = tg.SendAnimation(ctx, msg.Chat.Id, tg.FromDisk(result, "@heilmeh.mp4"), &tg.OptSendAnimation{ReplyParameters: tg.AsReplyTo(msg)})
+	_, err = tg.SendAnimation(ctx, msg.Chat.Id, tg.FromDisk(result, "@heillink.mp4"), &tg.OptSendAnimation{ReplyParameters: tg.AsReplyTo(msg)})
 	if err != nil {
 		return err
 	}
