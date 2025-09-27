@@ -82,6 +82,7 @@ func makeGif(source string) (result string, err error) {
 		"-i", source,
 		"-c:v", "libx264",
 		"-an",
+		"-preset", "fast",
 		"-vf", "scale='min(1280,iw)':'min(1280,ih)':force_original_aspect_ratio=decrease",
 		"-y",
 		result,
